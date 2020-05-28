@@ -14,4 +14,6 @@ then
     exit 1
 fi
 
+# Restore database
+
 cat "$DUMP_PATH" | docker exec -i "$CONTAINER_NAME" psql -U "$DB_USER"

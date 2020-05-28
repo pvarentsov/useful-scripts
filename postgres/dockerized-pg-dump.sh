@@ -14,6 +14,8 @@ then
     exit 1
 fi
 
+# Generate full path of the dump file
+
 PARSED_DUMP_PATH=$(
   set -e
   cd "$DUMP_FOLDER"
@@ -21,6 +23,8 @@ PARSED_DUMP_PATH=$(
 )
 
 DUMP_PATH="$PARSED_DUMP_PATH"/pgdump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+
+# Dump database
 
 docker exec -t "$CONTAINER_NAME" pg_dumpall -c -U "$DB_USER" > "$DUMP_PATH"
 
