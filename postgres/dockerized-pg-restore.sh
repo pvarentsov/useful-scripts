@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
 CONTAINER_NAME=$1
 DB_USER=$2
 DUMP_PATH=$3
@@ -9,10 +13,5 @@ then
     echo "Usage: dockerized-pg-restore.sh [container name] [db user] [dump path]"
     exit 1
 fi
-
-PARSED_DUMP_PATH=$(
-  cd "$DUMP_PATH"
-  pwd
-)
 
 cat "$DUMP_PATH" | docker exec -i "$CONTAINER_NAME" psql -U "$DB_USER"
