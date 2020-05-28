@@ -16,13 +16,13 @@ fi
 
 # Generate full path of the dump file
 
-PARSED_DUMP_PATH=$(
+PARSED_DUMP_FOLDER=$(
   set -e
   cd "$DUMP_FOLDER"
   pwd
 )
 
-DUMP_PATH="$PARSED_DUMP_PATH"/pgdump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+DUMP_PATH="$PARSED_DUMP_FOLDER"/pgdump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
 
 # Dump database
 
