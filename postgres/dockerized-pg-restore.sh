@@ -10,7 +10,7 @@ DUMP_PATH=$3
 
 if [ -z "${CONTAINER_NAME}" ] || [ -z "${DB_USER}" ] || [ -z "${DUMP_PATH}" ]
 then
-    echo "Usage: dockerized-pg-restore.sh [container name] [db user] [dump path]"
+    echo "Usage: $(basename $0) [container name] [db user] [dump path]"
     exit 1
 fi
 

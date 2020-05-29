@@ -10,7 +10,7 @@ DUMP_FOLDER=$3
 
 if [ -z "${CONTAINER_NAME}" ] || [ -z "${DB_USER}" ] || [ -z "${DUMP_FOLDER}" ]
 then
-    echo "Usage: dockerized-pg-dump.sh [container name] [db user] [dump folder]"
+    echo "Usage: $(basename $0) [container name] [db user] [dump folder]"
     exit 1
 fi
 
